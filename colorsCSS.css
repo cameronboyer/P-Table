@@ -1,0 +1,82 @@
+/*
+   Periodic Table Style Sheet
+   Author:	Liz Enloe
+   Date:   	01.31.2012
+
+   Filename:         PeriodicTableStyle.css
+   Supporting Files: 
+
+*/
+
+body p{
+	padding:1px;
+	margin:1px;
+}
+#alkaliMetals {
+
+background-color: aqua;
+
+}
+
+#Alkaline_earth_metals{
+
+background-color:  BurlyWood; 
+
+} 
+
+#Transition_metals{
+
+background-color:  Chartreuse;
+}
+
+#Metalloid{
+
+background-color:  LightPink;
+
+}
+
+#Lanthanides{
+
+background-color:  LightBlue; 
+} 
+
+#Actinides{
+
+background-color:  MediumSpringGreen;
+
+} 
+
+#Nonmetals{
+
+background-color:  Yellow;
+} 
+
+#nonmetalsS{
+	border:2px;
+}
+
+#Halogens{
+
+background-color:  Khaki;
+
+} 
+
+#Noble_gases{
+
+background-color:  Violet;
+} 
+
+#Poor_Metals{
+	background-color:lightgrey;
+}
+#empty{
+	border-style:none;
+}
+
+#gas{
+	color:red;
+}
+
+#liquid{
+	color:blue;
+}

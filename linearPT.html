@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+Periodic Table
+</title>
+
+<link rel="stylesheet" type="text/css" href="pMain.css" />
+<link rel="stylesheet" type="text/css" href="colorsCSS.css" />
+
+<script type="text/javascript" src="mouseOver.js"></script>
+
+<!-- hold all the elements -->
+<script type="text/javascript" src="arrays.js"></script>
+<script type="text/javascript" src="htmlBuild.js"></script>
+<!--
+
+
+   Author Cameron Boyer
+   Date 4/24/2012
+   Project: Element On table
+-->
+<script type="text/javascript">
+<!--
+/* <![CDATA[ */
+
+
+
+
+//window.onload = init;
+/* ]]> */
+//-->
+</script>
+</head>
+<body>
+
+<div id="main">
+</div>
+
+<div id="second">
+</div>
+<div id="third">
+</div>
+
+<div id="description">
+<ul id="list">
+	<li id="alkaliMetals" >Alkali metals</li>
+	<li id="Alkaline_earth_metals">Alkaline earth metals</li>
+	<li id="Lanthanides">Lanthanides</li>
+	<li id="Actinides">Actinides</li>
+	<li id="Transition_metals">Transition metals</li>
+	<br />
+	<li id="Poor_Metals">Poor metals</li>
+	<li id="Metalloid">Metalloids</li>
+	<li id="Nonmetals">Nonmetals</li>
+	<li id="Halogens">Halogens</li>
+	<li id="Noble_gases">Noble gases</li>
+</ul>
+</div>
+
+<script type="text/javascript">
+<!--
+/* <![CDATA[ */
+
+
+//for iteration because the scope was messing up
+var index3 = 0;
+var index2 = 0;
+var index = 0;
+
+
+//instantiates 3 tables
+var table = document.createElement("table");
+var table2 = document.createElement("table");
+var table3 = document.createElement("table");
+
+//creates the first table
+var main_Table = document.getElementById("main");
+main_Table.appendChild(table);
+
+
+//this is for the Second table Under the Main Periodic table
+var secondTable = document.getElementById("second");
+secondTable.appendChild(table2);
+
+//This table is directly below the second table, it shares the same format as the Second table
+var thirdTable = document.getElementById("third");
+thirdTable.appendChild(table3);
+
+
+//iteration to build elements in the First Table and appends the elements to the table
+for(var i = 0; i<8;i++){
+var tr = document.createElement("tr");
+	table.appendChild(tr);
+	for(var j = 0; j<18;j++){
+		var td = document.createElement("td");
+		table.childNodes[i].appendChild(td);
+		
+		//method is used in the Main html file
+		mainTable(td);		
+	}	
+}
+
+
+
+
+
+//iteration to build elements in the Second Table and appends the elements to the table
+for(var a = 0;a<1;a++){
+	var tr2 = document.createElement("tr");
+	table2.appendChild(tr2);
+	for(var b = 0; b < 15;b++){
+		var td2 = document.createElement("td");
+		table2.childNodes[a].appendChild(td2);	
+		
+		//method is used in the Main html file
+		babyTable(td2);		
+	}
+}
+//iteration to build elements in the Third Table and appends the elements to the table
+for(var r = 0; r<1;r++){
+var tr3 = document.createElement("tr");
+	table3.appendChild(tr3);
+	for(var v = 0; v<15;v++){
+		var td3 = document.createElement("td");
+		table3.childNodes[r].appendChild(td3);
+		
+		//method is used in the Main html file
+		babyTable2(td3);	
+	}	
+}
+
+
+
+
+
+
+
+
+function babyTable2(td3){
+	if(actinidesObject.actinides[index3].number != undefined){
+	//tried changing var names incase there were issues with scope.
+	//this did not resolve my issues
+		var p5 = document.createElement("p");
+		p5.innerHTML = actinidesObject.actinides[index3].number;
+		var p7 = document.createElement("p");
+		p7.innerHTML = actinidesObject.actinides[index3].name;
+		td3.appendChild(p5);
+		td3.appendChild(p7);
+	
+	if(actinidesObject.actinides[index3].group == "Actinides"){
+			td3.setAttribute("id","Actinides");
+		}	
+	//else handles empty elements	
+	}else{
+		td3.setAttribute("id","empty");	
+	}
+	++index3;	
+}
+
+//iterates for 2nd Table
+function babyTable(td2){
+	if(lanthanidesObject.lanthanides[index2].number != undefined){
+		var p4 = document.createElement("p");
+		p4.innerHTML = lanthanidesObject.lanthanides[index2].number;
+		var p6 = document.createElement("p");
+		p6.innerHTML = lanthanidesObject.lanthanides[index2].name;
+		td2.appendChild(p4);
+		td2.appendChild(p6);
+		if(lanthanidesObject.lanthanides[index2].group == "Lanthanides"){
+			td2.setAttribute("id","Lanthanides");
+		}	
+		//else handles empty elements
+		}else{
+			td2.setAttribute("id","empty");	
+		}	
+	++index2;	
+}
+
+
+
+
+
+//iterates for Main table
+function mainTable(td){
+//see if its undefined
+	if(elementsObject.elements[index] != undefined){
+		//lets me customize the elements in the td with seperate p tags
+		var p = document.createElement("p");
+		var p2 = document.createElement("p");			
+		p.innerHTML = elementsObject.elements[index].number;		
+		p2.innerHTML = elementsObject.elements[index].name;
+
+		//appends p's to the TD's
+		td.appendChild(p);
+		td.appendChild(p2);
+	
+		//check if its gas
+		if(elementsObject.elements[index].state == "gas"){
+			p.setAttribute("id","gas");
+		}
+		//check if its liquid
+		if(elementsObject.elements[index].state == "liquid"){
+			p.setAttribute("id","liquid");
+		}
+		
+		if(elementsObject.elements[index].group == "Noble_gases"){
+			td.setAttribute("id","Noble_gases");	
+		}
+		
+		if(elementsObject.elements[index].group == "Alkaline_earth_metals"){
+			td.setAttribute("id","Alkaline_earth_metals");
+		}
+
+		if(elementsObject.elements[index].group == "Metalloid"){
+			td.setAttribute("id","Metalloid");
+		}
+
+		if(elementsObject.elements[index].group == "Actinides"){
+			td.setAttribute("id","Actinides");
+		}
+
+		if(elementsObject.elements[index].group == "Lanthanides"){
+			td.setAttribute("id","Lanthanides");
+		}	
+
+		if(elementsObject.elements[index].group == "Nonmetals"){
+			td.setAttribute("id","Nonmetals");
+		}	
+
+		if(elementsObject.elements[index].group == "Halogens"){
+			td.setAttribute("id","Halogens");
+		}
+
+		if(elementsObject.elements[index].group == "alkaliMetals"){
+			td.setAttribute("id","alkaliMetals");
+		}
+
+		if(elementsObject.elements[index].group == "Poor_Metals"){
+			td.setAttribute("id","Poor_Metals");
+		}
+
+		if(elementsObject.elements[index].group == "Transition_metals"){
+			td.setAttribute("id","Transition_metals");
+		}	
+
+		//not best code but works for this situation
+		if(elementsObject.elements[index].group == undefined){
+			p.innerHTML = "";
+			p2.innerHTML = "";
+			td.setAttribute("id","empty");	
+		}
+	//else handles empty elements	
+	}else{
+		td.setAttribute("id","empty");		
+	}			
+	++index;
+}
+
+init();
+/* ]]> */
+//-->
+</script>
+<noscript><p>Script must be enabled to view webpage</p></noscript>
+</body>
+</html>
