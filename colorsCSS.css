@@ -12,71 +12,71 @@ body p{
 	padding:1px;
 	margin:1px;
 }
-#alkaliMetals {
+.alkaliMetals {
 
 background-color: aqua;
 
 }
 
-#Alkaline_earth_metals{
+.Alkaline_earth_metals{
 
 background-color:  BurlyWood; 
 
 } 
 
-#Transition_metals{
+.Transition_metals{
 
 background-color:  Chartreuse;
 }
 
-#Metalloid{
+.Metalloid{
 
 background-color:  LightPink;
 
 }
 
-#Lanthanides{
+.Lanthanides{
 
 background-color:  LightBlue; 
 } 
 
-#Actinides{
+.Actinides{
 
 background-color:  MediumSpringGreen;
 
 } 
 
-#Nonmetals{
+.Nonmetals{
 
 background-color:  Yellow;
 } 
 
-#nonmetalsS{
+.nonmetalsS{
 	border:2px;
 }
 
-#Halogens{
+.Halogens{
 
 background-color:  Khaki;
 
 } 
 
-#Noble_gases{
+.Noble_gases{
 
 background-color:  Violet;
 } 
 
-#Poor_Metals{
+.Poor_Metals{
 	background-color:lightgrey;
 }
-#empty{
+.empty{
 	border-style:none;
 }
 
-#gas{
+.gas{
 	color:red;
 }
 
-#liquid{
+.liquid{
 	color:blue;
 }
