@@ -46,17 +46,17 @@ Periodic Table
 
 <div id="description">
 <ul id="list">
-	<li id="alkaliMetals" >Alkali metals</li>
-	<li id="Alkaline_earth_metals">Alkaline earth metals</li>
-	<li id="Lanthanides">Lanthanides</li>
-	<li id="Actinides">Actinides</li>
-	<li id="Transition_metals">Transition metals</li>
+	<li class="alkaliMetals" >Alkali metals</li>
+	<li class="Alkaline_earth_metals">Alkaline earth metals</li>
+	<li class="Lanthanides">Lanthanides</li>
+	<li class="Actinides">Actinides</li>
+	<li class="Transition_metals">Transition metals</li>
 	<br />
-	<li id="Poor_Metals">Poor metals</li>
-	<li id="Metalloid">Metalloids</li>
-	<li id="Nonmetals">Nonmetals</li>
-	<li id="Halogens">Halogens</li>
-	<li id="Noble_gases">Noble gases</li>
+	<li class="Poor_Metals">Poor metals</li>
+	<li class="Metalloid">Metalloids</li>
+	<li class="Nonmetals">Nonmetals</li>
+	<li class="Halogens">Halogens</li>
+	<li class="Noble_gases">Noble gases</li>
 </ul>
 </div>
 
@@ -151,11 +151,11 @@ function babyTable2(td3){
 		td3.appendChild(p7);
 	
 	if(actinidesObject.actinides[index3].group == "Actinides"){
-			td3.setAttribute("id","Actinides");
+			td3.setAttribute("class","Actinides");
 		}	
 	//else handles empty elements	
 	}else{
-		td3.setAttribute("id","empty");	
+		td3.setAttribute("class","empty");	
 	}
 	++index3;	
 }
@@ -170,11 +170,11 @@ function babyTable(td2){
 		td2.appendChild(p4);
 		td2.appendChild(p6);
 		if(lanthanidesObject.lanthanides[index2].group == "Lanthanides"){
-			td2.setAttribute("id","Lanthanides");
+			td2.setAttribute("class","Lanthanides");
 		}	
 		//else handles empty elements
 		}else{
-			td2.setAttribute("id","empty");	
+			td2.setAttribute("class","empty");	
 		}	
 	++index2;	
 }
@@ -199,62 +199,62 @@ function mainTable(td){
 	
 		//check if its gas
 		if(elementsObject.elements[index].state == "gas"){
-			p.setAttribute("id","gas");
+			p.setAttribute("class","gas");
 		}
 		//check if its liquid
 		if(elementsObject.elements[index].state == "liquid"){
-			p.setAttribute("id","liquid");
+			p.setAttribute("class","liquid");
 		}
 		
 		if(elementsObject.elements[index].group == "Noble_gases"){
-			td.setAttribute("id","Noble_gases");	
+			td.setAttribute("class","Noble_gases");	
 		}
 		
 		if(elementsObject.elements[index].group == "Alkaline_earth_metals"){
-			td.setAttribute("id","Alkaline_earth_metals");
+			td.setAttribute("class","Alkaline_earth_metals");
 		}
 
 		if(elementsObject.elements[index].group == "Metalloid"){
-			td.setAttribute("id","Metalloid");
+			td.setAttribute("class","Metalloid");
 		}
 
 		if(elementsObject.elements[index].group == "Actinides"){
-			td.setAttribute("id","Actinides");
+			td.setAttribute("class","Actinides");
 		}
 
 		if(elementsObject.elements[index].group == "Lanthanides"){
-			td.setAttribute("id","Lanthanides");
+			td.setAttribute("class","Lanthanides");
 		}	
 
 		if(elementsObject.elements[index].group == "Nonmetals"){
-			td.setAttribute("id","Nonmetals");
+			td.setAttribute("class","Nonmetals");
 		}	
 
 		if(elementsObject.elements[index].group == "Halogens"){
-			td.setAttribute("id","Halogens");
+			td.setAttribute("class","Halogens");
 		}
 
 		if(elementsObject.elements[index].group == "alkaliMetals"){
-			td.setAttribute("id","alkaliMetals");
+			td.setAttribute("class","alkaliMetals");
 		}
 
 		if(elementsObject.elements[index].group == "Poor_Metals"){
-			td.setAttribute("id","Poor_Metals");
+			td.setAttribute("class","Poor_Metals");
 		}
 
 		if(elementsObject.elements[index].group == "Transition_metals"){
-			td.setAttribute("id","Transition_metals");
+			td.setAttribute("class","Transition_metals");
 		}	
 
 		//not best code but works for this situation
 		if(elementsObject.elements[index].group == undefined){
 			p.innerHTML = "";
 			p2.innerHTML = "";
-			td.setAttribute("id","empty");	
+			td.setAttribute("class","empty");	
 		}
 	//else handles empty elements	
 	}else{
-		td.setAttribute("id","empty");		
+		td.setAttribute("class","empty");		
 	}			
 	++index;
 }
