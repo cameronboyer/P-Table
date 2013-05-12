@@ -17,7 +17,17 @@ body p{
 background-color: aqua;
 
 }
+.border{ border: 1px dotted red;
+ }
+.noborder{}
 
+.gasses {
+	background-color:lightgrey;
+}
+
+.liquids{
+	background-color:lightblue;
+}
 .Alkaline_earth_metals{
 
 background-color:  BurlyWood; 
@@ -56,8 +66,7 @@ background-color:  Yellow;
 }
 
 .Halogens{
-
-background-color:  Khaki;
+	background-color: Khaki;
 
 } 
 
@@ -69,6 +78,7 @@ background-color:  Violet;
 .Poor_Metals{
 	background-color:lightgrey;
 }
+
 .empty{
 	border-style:none;
 }

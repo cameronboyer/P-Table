@@ -1,7 +1,7 @@
 body{	
 	width:900px;
 	margin: 0 auto;
-	
+	background:orange;
 }
 
 table{
@@ -16,24 +16,22 @@ td{
 	height:10px;
 	margin: 0 auto;
 }
-tr{
-	/*width:900px;*/
-}
 
-#description{
+
+.description{
 	text-align:center;
-	
+	width:800px;
+	padding:5px;	
 }
-#description ul#list{
-	
+.description ul.list{	
     text-align: center;
 	display:inline-block;
-
 }
-#description li{
+.description li{
 	float:left;
-	width:125px;
+	width:150px;
 	list-style:none;
-	text-align:center;
+	border:1px;
+	text-align:center;	
 }
 
